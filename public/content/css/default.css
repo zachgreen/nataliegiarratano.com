@@ -2,3 +2,8 @@
     background-image:url(/content/images/random_grey_variations.png);
     background-repeat:repeat;
 }
+section.main {
+    width:90%;
+    -webkit-box-shadow: 2px 2px 8px 2px #aaa;
+    box-shadow: 2px 2px 8px 2px #aaa;
+}
