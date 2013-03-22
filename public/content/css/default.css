@@ -72,3 +72,9 @@ article.page > p a:hover { opacity: .75; }
     background: url('../images/scrollup.png') no-repeat;
     background-size:contain;
 }
+
+span.credit {
+    display:block;
+    font-size: .75em;
+    font-style: italic;
+}
