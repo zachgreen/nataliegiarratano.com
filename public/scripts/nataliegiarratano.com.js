@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('a').click(function () {
+    $('ul.nav a').click(function () {
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
         }, 500);
@@ -16,7 +16,7 @@ $(document).ready(function () {
     });
 
     $('.scrollup').click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 600);
+        $("html, body").animate({ scrollTop: 0 }, 500);
         return false;
     });
 });
