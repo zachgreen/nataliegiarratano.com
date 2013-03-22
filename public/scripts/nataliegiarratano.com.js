@@ -19,4 +19,11 @@ $(document).ready(function () {
         $("html, body").animate({ scrollTop: 0 }, 500);
         return false;
     });
+
+    var windowHeight = $(window).height()
+    $('article.page').each(function(){
+        if (windowHeight > $(this).height()) {
+            $(this).height(windowHeight);
+        }
+    });
 });
