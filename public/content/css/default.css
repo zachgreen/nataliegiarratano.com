@@ -31,6 +31,7 @@ ul.nav {
     right: 200px;
     padding: .35em .25em;
     margin: 0px;
+    z-index: 100;
 
     list-style-type: none;
 
@@ -77,6 +78,28 @@ article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underlin
     }
     article.page > ul > li { padding: .50em 0; }
 
+    article.page > header > nav > ul {
+        height: 1.00em;
+        margin: 0 0 1.5em 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    article.page > header > nav > ul > li { float:left;
+                                   line-height: 1.00em;
+                                   padding: 0 .50em;
+                                   border-right: 1px solid #fff;}
+    article.page > header > nav > ul > li:first-child { padding-left: 0; }
+    article.page > header > nav > ul > li:last-child { border-right: none; }
+
+article#Poetry { overflow: hidden; position: relative; }
+article#Poetry #PoetryContainer {
+    position: absolute;
+    width: 100%;
+    clear: both;
+}
+article.poem { float:left; margin: 0 auto;}
+article.poem:not(:first-child) {  }
+article.poem div {  }
 article.poem pre { font-family: 'Jacques Francois', serif; }
 
 .scrollup{
