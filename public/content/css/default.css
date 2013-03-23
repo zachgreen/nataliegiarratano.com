@@ -57,8 +57,9 @@ article.page {
     margin-bottom: 5.00em;
 }
 article.page:not(#Bio) { padding: 2.00em 0; }
-article.page > p a { text-decoration:none; color: #33812f; }
-article.page > p a:hover { opacity: .75; }
+
+article.page a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
+article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
 
     article.page > h2 { color: #fff; 
                         margin:0; 
@@ -74,11 +75,7 @@ article.page > p a:hover { opacity: .75; }
         float:left;
         width: 50%;
     }
-        article.page > ul > li { 
-            padding: .50em 0; 
-        }
-        article.page > ul > li > a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
-        article.page > ul > li > a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
+    article.page > ul > li { padding: .50em 0; }
 
 article.poem pre { font-family: 'Jacques Francois', serif; }
 
