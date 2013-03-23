@@ -136,3 +136,5 @@ footer {
     font-style: italic;
     text-align: center;
 }
+
+#Bio > p { text-align: justify; }
