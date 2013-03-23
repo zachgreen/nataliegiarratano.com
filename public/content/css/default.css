@@ -3,6 +3,7 @@
     background-repeat:repeat;
     width: 950px;
     margin: 0 auto;
+    font-family: 'Jacques Francois', serif;
 }
 
 header {
@@ -34,7 +35,6 @@ ul.nav {
     list-style-type: none;
 
     font-size: 1.25em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.35em;
 
     background-color: #33812f;
@@ -53,13 +53,14 @@ ul.nav {
 article.page {
     height: 1000px;
     font-size: 1.05em;
+    line-height: 1.55em;
     color: rgba(255,255,255,1);
 }
 article.page:not(#Bio) { padding: 2.00em 0; }
 article.page > p a { text-decoration:none; color: #33812f; }
 article.page > p a:hover { opacity: .75; }
 
-    article.page > h2 { color: #33812f; margin:0; font-size: 2.00em; }
+    article.page > h2 { color: #fff; margin:0; font-size: 1.55em; text-transform: uppercase; padding-bottom: .75em; }
     article.page > ul { 
         margin:0;
         padding: 0;
