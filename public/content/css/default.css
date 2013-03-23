@@ -19,10 +19,10 @@ header {
         padding: 0 0;
         margin: .75em 0 0 0;
         
-        font-size: 4.25em;
+        font-size: 3.75em;
         letter-spacing: .07em;
         font-weight: 100;
-        font-family: Helvetica, Arial, sans-serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
 ul.nav {
@@ -51,24 +51,36 @@ ul.nav {
         ul.nav li a:hover { color: rgba(255,255,255,.75); }
 
 article.page {
-    height: 1000px;
     font-size: 1.05em;
     line-height: 1.55em;
     color: rgba(255,255,255,1);
+    margin-bottom: 5.00em;
 }
 article.page:not(#Bio) { padding: 2.00em 0; }
 article.page > p a { text-decoration:none; color: #33812f; }
 article.page > p a:hover { opacity: .75; }
 
-    article.page > h2 { color: #fff; margin:0; font-size: 1.55em; text-transform: uppercase; padding-bottom: .75em; }
+    article.page > h2 { color: #fff; 
+                        margin:0; 
+                        font-size: 1.55em; 
+                        text-transform: uppercase; 
+                        padding-bottom: .75em; 
+                        font-family: 'Open Sans', sans-serif; }
     article.page > ul { 
         margin:0;
         padding: 0;
         list-style-type: none;
+        display:inline;
+        float:left;
+        width: 50%;
     }
-        article.page > ul > li { padding: .50em 0; }
-        article.page > ul > li > a {  text-decoration: none; color: rgba(255,255,255,1); }
-        article.page > ul > li > a:hover { color: rgba(255,255,255,.75); }
+        article.page > ul > li { 
+            padding: .50em 0; 
+        }
+        article.page > ul > li > a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
+        article.page > ul > li > a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
+
+article.poem pre { font-family: 'Jacques Francois', serif; }
 
 .scrollup{
     width: 48px;

@@ -29,6 +29,10 @@ $(document).ready(function () {
     $('article.page').each(function(){
         if (windowHeight > $(this).height()) {
             $(this).height(windowHeight);
+        } else {
+            //increase the height to be a multiple of the window height
+            var currentHeight = $(this).height();
+            $(this).height((Math.floor(currentHeight / windowHeight) + 1) * windowHeight);
         }
     });
 });
