@@ -1,7 +1,12 @@
 $(document).ready(function () {
     $('ul.nav a').click(function () {
+        var top = $($(this).attr('href')).offset().top;
+        if ($(this).attr('href') == '#Bio') {
+            top = 0;
+        }
+
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top
+            scrollTop: top
         }, 500);
         return false;
     });

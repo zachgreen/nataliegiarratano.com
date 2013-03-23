@@ -1,5 +1,5 @@
 ﻿body {
-    background-image:url(/content/images/random_grey_variations.png);
+    background-image:url(/content/images/green-fibers.png);
     background-repeat:repeat;
     width: 950px;
     margin: 0 auto;
@@ -9,41 +9,44 @@ header {
     display: inline-block;
     color: rgba(255,255,255,1);
     line-height: 1.5;
-    font-size: 1.75em;
+
     text-align: left;
     text-shadow: 0 1px 0 #fff;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);   
 }
     header h1 {
         padding: 0 0;
-        margin: .25em 0;
+        margin: .75em 0 0 0;
+        
+        font-size: 4.25em;
+        letter-spacing: .07em;
+        font-weight: 100;
+        font-family: Helvetica, Arial, sans-serif;
     }
 
 ul.nav {
     position: fixed;
     top: 0px;
-    right: 260px;
-    padding: .05em .25em;
+    right: 200px;
+    padding: .35em .25em;
     margin: 0px;
 
     list-style-type: none;
 
     font-size: 1.25em;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    line-height: 2.00em;
+    line-height: 1.35em;
 
-    background-color: #ae7ce2;
+    background-color: #33812f;
 }
     ul.nav li {
         display: inline-block;
-        padding: .20em .50em;
+        padding: 0 .50em;
         padding-left: inherit;
 
         border-right: 1px solid #fff;
     }
-    ul.nav li:last-child {
-        border-right: none;
-    }
+    ul.nav li:last-child { border-right: none; }
         ul.nav li a { text-decoration: none; color: rgba(255,255,255,1); }
         ul.nav li a:hover { color: rgba(255,255,255,.75); }
 
@@ -52,11 +55,11 @@ article.page {
     font-size: 1.05em;
     color: rgba(255,255,255,1);
 }
-    article.page:not(#Bio) { padding: 2.00em 0; }
-article.page > p a { text-decoration:none; color: #ae7ce2; }
+article.page:not(#Bio) { padding: 2.00em 0; }
+article.page > p a { text-decoration:none; color: #33812f; }
 article.page > p a:hover { opacity: .75; }
 
-    article.page > h2 { color: #ae7ce2; margin:0; }
+    article.page > h2 { color: #33812f; margin:0; font-size: 2.00em; }
     article.page > ul { 
         margin:0;
         padding: 0;
@@ -67,24 +70,36 @@ article.page > p a:hover { opacity: .75; }
         article.page > ul > li > a:hover { color: rgba(255,255,255,.75); }
 
 .scrollup{
-    width:48px;
-    height:48px;
-    opacity:1.0;
+    width: 48px;
+    height: 48px;
+    opacity: 1.0;
     position:fixed;
-    bottom:50px;
-    right:100px;
-    display:none;
+    bottom: 7.00em;
+    right: 100px;
+    display: none;
     text-indent:-9999px;
     background: url('../images/scrollup.png') no-repeat;
     background-size:contain;
 }
 
-span.credit {
-    display:block;
-    font-size: .75em;
-    font-style: italic;
-}
-
 #natimage {
     margin-top: 2.00em;
+}
+
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5.00em;
+    padding: 1.00em;
+    
+    border: 1px solid #000;
+
+    background-color: #191919;
+    color: #fff;
+
+    font-size: .75em;
+    font-style: italic;
+    text-align: center;
 }
