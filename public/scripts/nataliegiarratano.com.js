@@ -63,8 +63,8 @@ $(document).ready(function () {
     $('#Poetry nav ul li a').click(function () {
         var poem = $($(this).attr('href'));
         poetryContainer.animate({ left: -poem.position().left }, {
-            duration: 500, // how fast we are animating
-            easing: 'easeInExpo', // the type of easing
+            duration: 600, // how fast we are animating
+            easing: 'easeInCubic', // the type of easing
         });
 
         var newHeight = (windowHeight > (poem.height() + poetryHeader.height())) ? windowHeight : (poem.height() + poetryHeader.height());
