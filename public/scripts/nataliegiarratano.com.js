@@ -26,7 +26,7 @@ $(document).ready(function () {
     });
 
     var windowHeight = $(window).height()
-    $('article.page').each(function(){
+    $('article.page').last().each(function(){
         if (windowHeight > $(this).height()) {
             $(this).height(windowHeight);
         } else {
