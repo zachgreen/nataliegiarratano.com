@@ -17,7 +17,7 @@ header {
 }
     header h1 {
         padding: 0 0;
-        margin: .75em 0 0 0;
+        margin: .25em 0 0 0;
         
         font-size: 3.75em;
         letter-spacing: .07em;
@@ -27,10 +27,10 @@ header {
 
 ul.nav {
     position: fixed;
-    top: 0px;
-    right: 200px;
+    top: 0;
+    right: 2.00em;
     padding: .35em .25em;
-    margin: 0px;
+    margin: 0;
     z-index: 100;
 
     list-style-type: none;
@@ -52,12 +52,13 @@ ul.nav {
         ul.nav li a:hover { color: rgba(255,255,255,.75); }
 
 article.page {
-    font-size: 1.05em;
-    line-height: 1.55em;
+    font-size: 1.00em;
+    line-height: 1.45em;
     color: rgba(255,255,255,1);
     margin-bottom: 5.00em;
 }
 article.page:not(#Bio) { padding: 2.00em 0; }
+article.page#Bio p { padding: 0; margin: .55em 0; }
 
 article.page a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
 article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
@@ -91,6 +92,9 @@ article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underlin
     article.page > header > nav > ul > li:first-child { padding-left: 0; }
     article.page > header > nav > ul > li:last-child { border-right: none; }
 
+    article.page p.blurb { margin: 0 0 3.00em 0; }
+    article.page p.blurb span.blurb-credit { text-align: right; width: 90%; display: block; margin: .75em 0 0 0; }
+
 article#Poetry { overflow: hidden; position: relative; }
 article#Poetry #PoetryContainer {
     position: absolute;
@@ -101,6 +105,7 @@ article.poem { float:left; margin: 0 auto;}
 article.poem:not(:first-child) {  }
 article.poem div {  }
 article.poem pre { font-family: 'Jacques Francois', serif; }
+article.poem span.published-info { font-size: .85em; }
 
 .scrollup{
     width: 48px;
@@ -108,7 +113,7 @@ article.poem pre { font-family: 'Jacques Francois', serif; }
     opacity: 1.0;
     position:fixed;
     bottom: 7.00em;
-    right: 100px;
+    right: 2.00em;
     display: none;
     text-indent:-9999px;
     background: url('../images/scrollup.png') no-repeat;
@@ -116,7 +121,9 @@ article.poem pre { font-family: 'Jacques Francois', serif; }
 }
 
 #natimage {
-    margin-top: 2.00em;
+    margin-top: 1.00em;
+    width: 30.00em;
+    height: auto;
 }
 
 footer {
@@ -124,10 +131,10 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 5.00em;
-    padding: 1.00em;
+    height: 4.75em;
+    padding: .15em;
     
-    border: 1px solid #000;
+    border-top: 1px solid #000;
 
     background-color: #191919;
     color: #fff;
@@ -136,5 +143,6 @@ footer {
     font-style: italic;
     text-align: center;
 }
+footer > p { margin: 0; padding: .35em; }
 
 #Bio > p { text-align: justify; }
