@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('html, body').animate({
             scrollTop: top
         }, 500);
-        return false;
+        //return false;
     });
 
     //wire up scroll to top functionality
@@ -44,11 +44,11 @@ $(document).ready(function () {
     var poetryContainer = $('#PoetryContainer');
 
     //initialize the poetry article height to the height of the first poem plus the height of the header
-    if (windowHeight > poems.first().height() + poetryHeader.height()) {
-        poetry.height(windowHeight);
-    } else {
-        poetry.height(poems.first().height() + poetryHeader.height());
-    }
+    setPoetrySectionHeight(windowHeight, poetry, poetryHeader, poems);
+    $(window).resize(function () {
+        windowHeight = $(window).height();
+        setPoetrySectionHeight(windowHeight, poetry, poetryHeader, poems);
+    });
 
     //set the poems' inner div width to the width of the body element
     poems.children('div').width($('body').width());
@@ -59,16 +59,48 @@ $(document).ready(function () {
     //increase the width of the poetry container to the window width times the number of poems.
     poetryContainer.width(numberOfPoems * $(window).width());
 
-    //shift to the selected poem
-    $('#Poetry nav ul li a').click(function () {
-        var poem = $($(this).attr('href'));
-        poetryContainer.animate({ left: -poem.position().left }, {
-            duration: 600, // how fast we are animating
-            easing: 'easeInCubic', // the type of easing
-        });
+    //if url includes a poem, select it
+    if (window.location.hash.indexOf('?') >= 0) {
+        var poem = window.location.hash.substring(window.location.hash.indexOf('?') + 1, window.location.hash.indexOf('#'));
 
-        var newHeight = (windowHeight > (poem.height() + poetryHeader.height())) ? windowHeight : (poem.height() + poetryHeader.height());
-        poetry.height(newHeight);
+        //find the poem in the list and select it
+        selectPoem(windowHeight, poetry, poetryHeader, poetryContainer,$('a[href$="' + poem + '"]'), '#' + poem);
+    }
+
+    //shift to the selected poem when link clicked
+    $('#Poetry nav ul li a').click(function () {
+        selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, this, $(this).attr('href'));
         return false;
     });
 });
+
+function setPoetrySectionHeight(windowHeight, poetrySection, poetryHeaderSection, poemsSection) {
+    if (windowHeight > poemsSection.first().height() + poetryHeaderSection.height()) {
+        poetrySection.height(windowHeight);
+    } else {
+        poetrySection.height(poemsSection.first().height() + poetryHeaderSection.height());
+    }
+}
+
+function selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, object, id) {
+    //remove all selected poems
+    $('#Poetry nav ul li a.selected').removeClass('selected');
+
+    //mark this poem as selected
+    $(object).addClass('selected');
+
+    //shift to poem
+    var poem = $(id);
+    poetryContainer.animate({ left: -poem.position().left }, {
+        duration: 600, // how fast we are animating
+        easing: 'easeInCubic', // the type of easing
+    });
+
+    var newHeight = (windowHeight > (poem.height() + poetryHeader.height())) ? windowHeight : (poem.height() + poetryHeader.height());
+    poetry.height(newHeight);
+
+    //add poem to url
+    window.location.hash = ''
+    window.location.href = window.location.href + '?' + $(object).attr('href').toString().substring(1, $(object).attr('href').toString().length);
+    window.location.hash = '#Poetry';
+}

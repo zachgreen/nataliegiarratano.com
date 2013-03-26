@@ -6,6 +6,10 @@
     font-family: 'Jacques Francois', serif;
 }
 
+a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
+a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
+a.selected { color: #fff; }
+
 header {
     display: inline-block;
     color: rgba(255,255,255,1);
@@ -60,9 +64,6 @@ article.page {
 article.page:not(#Bio) { padding: 2.00em 0; }
 article.page#Bio p { padding: 0; margin: .55em 0; }
 
-article.page a {  text-decoration: none; color: rgba(114, 230, 108, .7); }
-article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underline; }
-
     article.page h2 { color: #fff; 
                         margin:0; 
                         font-size: 1.55em; 
@@ -92,7 +93,7 @@ article.page a:hover {  color: rgba(114, 230, 108, 1); text-decoration: underlin
     article.page > header > nav > ul > li:first-child { padding-left: 0; }
     article.page > header > nav > ul > li:last-child { border-right: none; }
 
-    article.page p.blurb { margin: 0 0 3.00em 0; }
+    article.page p.blurb { margin: 0 0 3.00em 0; text-align:justify; }
     article.page p.blurb span.blurb-credit { text-align: right; width: 90%; display: block; margin: .75em 0 0 0; }
 
 article#Poetry { overflow: hidden; position: relative; }
