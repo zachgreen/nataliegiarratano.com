@@ -80,19 +80,6 @@ article.page#Bio p { padding: 0; margin: .55em 0; }
     }
     article.page > ul > li { padding: .50em 0; }
 
-    article.page > header > nav > ul {
-        height: 1.00em;
-        margin: 0 0 1.5em 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    article.page > header > nav > ul > li { float:left;
-                                   line-height: 1.00em;
-                                   padding: 0 .50em;
-                                   border-right: 1px solid #fff;}
-    article.page > header > nav > ul > li:first-child { padding-left: 0; }
-    article.page > header > nav > ul > li:last-child { border-right: none; }
-
     article.page p.blurb { margin: 0 0 3.00em 0; text-align:justify; }
     article.page p.blurb span.blurb-credit { text-align: right; width: 90%; display: block; margin: .75em 0 0 0; }
 
@@ -147,3 +134,62 @@ footer {
 footer > p { margin: 0; padding: .35em; }
 
 #Bio > p { text-align: justify; }
+
+
+
+nav ul { padding: 0; margin: 0 }
+nav > ul{
+	list-style:none;
+	margin-bottom:10px;
+	/* Clear floats */
+	float:left;
+	width:100%;
+	/* Bring the nav above everything else--uncomment if needed. */
+	position:relative;
+	z-index:5;
+	
+}
+nav > ul li{
+	float:left;
+	margin-right:10px;
+	position:relative;
+}
+nav > ul a{
+	display:block;
+	padding:5px;
+	text-decoration:none;
+}
+nav > ul a:hover{
+	text-decoration:none;
+}
+
+/*--- DROPDOWN ---*/
+nav > ul ul{
+	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+	background:#33812f;
+    list-style:none;
+	position:absolute;
+    display:none;
+	/*left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+}
+nav > ul ul li{
+	padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	float:none;
+    width:100%;
+}
+nav > ul ul a {
+    color: #fff;
+	text-decoration:none;
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+nav > ul ul a:hover {
+    color: #fff;
+	text-decoration:none;
+}
+nav > ul li a.active { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	background: #33812f;
+}
+nav > ul li ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	background: #65a362;
+}

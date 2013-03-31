@@ -36,6 +36,33 @@ $(document).ready(function () {
         }
     });
 
+
+    //wire up menu
+    $('a.menu').click(function () {
+        var item = $(this).parent().children('ul.submenu');
+        var currentStatus = item.css('display');
+
+        //hide all
+        $('ul.submenu').hide();
+        $('a.menu').removeClass('active');
+
+        //show or hide depending on current status
+        if (currentStatus === 'none') {
+            $(this).addClass('active');
+            $(this).parent().children('ul.submenu').show();
+        } else {
+            $(this).removeClass('active');
+            $(this).parent().children('ul.submenu').hide();
+        }
+        return false;
+    });
+
+    //when menu item is clicked hide menu
+    $('ul.submenu li a').click(function () {
+        $('a.menu').removeClass('active');
+        $('ul.submenu').hide();
+    });
+
     //poetry slide in transistion
     var poetry = $('#Poetry');
     var poetryHeader = $('#Poetry header');
@@ -59,17 +86,40 @@ $(document).ready(function () {
     //increase the width of the poetry container to the window width times the number of poems.
     poetryContainer.width(numberOfPoems * $(window).width());
 
-    //if url includes a poem, select it
-    if (window.location.hash.indexOf('?') >= 0) {
-        var poem = window.location.hash.substring(window.location.hash.indexOf('?') + 1, window.location.hash.indexOf('#'));
+    ////if url includes a poem, select it
+    //if (window.location.hash.indexOf('?') >= 0) {
+    //    var poem = window.location.hash.substring(window.location.hash.indexOf('?') + 1, window.location.hash.indexOf('#'));
 
-        //find the poem in the list and select it
-        selectPoem(windowHeight, poetry, poetryHeader, poetryContainer,$('a[href$="' + poem + '"]'), '#' + poem);
-    }
+    //    //find the poem in the list and select it
+    //    selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, $('a[href$="' + poem + '"]'), '#' + poem);
+    //} else {
+    //    //find the poem in the list and select it
+    //    selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, $('a[href$="Swarm"]'), '#Swarm');
+    //}
+
+    //mark this poem as selected
+    $('a[href="#Swarm"]').addClass('selected');
 
     //shift to the selected poem when link clicked
     $('#Poetry nav ul li a').click(function () {
-        selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, this, $(this).attr('href'));
+        var poem = $($(this).attr('href'));
+
+        //remove all selected poems
+        $('#Poetry nav ul li a.selected').removeClass('selected');
+
+        //mark this poem as selected
+        $(this).addClass('selected');
+
+        //shift to poem
+        poetryContainer.animate({ left: -poem.position().left }, {
+            duration: 600, // how fast we are animating
+            easing: 'easeInCubic', // the type of easing
+        });
+
+        var newHeight = (windowHeight > (poem.height() + poetryHeader.height())) ? windowHeight : (poem.height() + poetryHeader.height());
+        poetry.height(newHeight);
+
+        //selectPoem(windowHeight, poetry, poetryHeader, poetryContainer, this, $(this).attr('href'));
         return false;
     });
 });
