@@ -62,7 +62,7 @@ article.page {
     margin-bottom: 5.00em;
 }
 article.page:not(#Bio) { padding: 2.00em 0; }
-article.page#Bio p { padding: 0; margin: .55em 0; }
+article.page#Bio p { padding: 0; margin: .55em 0 1.00em 0; }
 
     article.page h2 { color: #fff; 
                         margin:0; 
