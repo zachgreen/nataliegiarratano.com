@@ -80,6 +80,12 @@ article.page#Bio p { padding: 0; margin: .55em 0 1.00em 0; }
     }
     article.page > ul > li { padding: .50em 0; }
 
+    article.page img#leavingCleanCover {
+        display: block;
+        float: right;
+        padding: 4em 2em;
+    }
+
     article.page p.blurb { margin: 0 0 3.00em 0; text-align:justify; }
     article.page p.blurb span.blurb-credit { text-align: right; width: 90%; display: block; margin: .75em 0 0 0; }
 
