@@ -98,8 +98,11 @@ article#Poetry #PoetryContainer {
 article.poem { float:left; margin: 0 auto;}
 article.poem:not(:first-child) {  }
 article.poem div {  }
+article pre { font-family: 'Jacques Francois', serif; }
 article.poem pre { font-family: 'Jacques Francois', serif; }
 article.poem span.published-info { font-size: .85em; }
+
+
 
 .scrollup{
     width: 48px;
