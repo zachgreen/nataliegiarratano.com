@@ -83,7 +83,10 @@ article.page#Bio p { padding: 0; margin: .55em 0 1.00em 0; }
     article.page img.cover-photo{
         display: block;
         float: right;
-        padding: 4em 2em;
+        padding-top: 4em;
+		padding-bottom: 2em;
+		padding-left: 2em;
+		padding-right: 2em;
     }
 
     article.page p.blurb { margin: 0 0 3.00em 0; text-align:justify; }
