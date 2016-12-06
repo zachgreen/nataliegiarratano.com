@@ -80,7 +80,7 @@ article.page#Bio p { padding: 0; margin: .55em 0 1.00em 0; }
     }
     article.page > ul > li { padding: .50em 0; }
 
-    article.page img#leavingCleanCover {
+    article.page img.cover-photo{
         display: block;
         float: right;
         padding: 4em 2em;
