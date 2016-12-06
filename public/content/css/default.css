@@ -1,5 +1,5 @@
 ﻿body {
-    background-image:url(/content/images/green-fibers.png);
+    background-image:url(../images/green-fibers.png);
     background-repeat:repeat;
     width: 950px;
     margin: 0 auto;
@@ -80,14 +80,21 @@ article.page#Bio p { padding: 0; margin: .55em 0 1.00em 0; }
     }
     article.page > ul > li { padding: .50em 0; }
 
-    article.page img.cover-photo{
-        display: block;
+    article.page .cover-photo{
         float: right;
         padding-top: 4em;
 		padding-bottom: 2em;
 		padding-left: 2em;
-		padding-right: 2em;
     }
+	
+	.cover-photo  img {
+		display: block;
+	}
+	
+	.cover-photo  span.cover-photo-credit {
+		display: block;
+		text-align: center;
+	}
 
     article.page p.blurb { margin: 0 0 3.00em 0; text-align:justify; }
     article.page p.blurb span.blurb-credit { text-align: right; width: 90%; display: block; margin: .75em 0 0 0; }
