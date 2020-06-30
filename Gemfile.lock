@@ -1,9 +1,10 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
-    rack (1.5.1)
+    rack (2.1.4)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
